@@ -113,7 +113,9 @@ app.get("/auth/kick", (req, res) => {
     client_id: config.kick.clientId,
     redirect_uri: KICK_REDIRECT_URI,
 
-    scope: ["chat:write", "events:subscribe"].join(" "),
+    scope: ["user:read", "channel:read", "chat:write", "events:subscribe"].join(
+      " ",
+    ),
 
     code_challenge: codeChallenge,
     code_challenge_method: "S256",
